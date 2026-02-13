@@ -356,9 +356,7 @@ impl Neg for ScalarGF2_128 {
 impl From<u32> for ScalarGF2_128 {
     #[inline(always)]
     fn from(v: u32) -> Self {
-        ScalarGF2_128 {
-            v: [v as u64, 0],
-        }
+        ScalarGF2_128 { v: [v as u64, 0] }
     }
 }
 

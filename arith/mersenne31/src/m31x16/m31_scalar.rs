@@ -27,9 +27,7 @@ impl Field for ScalarM31x16 {
 
     const FIELD_SIZE: usize = 32;
 
-    const ZERO: Self = Self {
-        v: [M31::ZERO; 16],
-    };
+    const ZERO: Self = Self { v: [M31::ZERO; 16] };
 
     const ONE: Self = Self {
         v: [M31 { v: 1 }; 16],

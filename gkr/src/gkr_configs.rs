@@ -5,24 +5,24 @@ use halo2curves::bn256::{Bn256, G1Affine};
 use poly_commit::{raw::RawExpanderGKR, HyperBiKZGPCS, HyraxPCS};
 use transcript::BytesHashTranscript;
 
-#[cfg(feature = "mersenne31")]
-use gkr_engine::{M31x16Config, M31x1Config};
-#[cfg(feature = "mersenne31")]
-use gkr_hashers::PoseidonFiatShamirHasher;
-#[cfg(feature = "mersenne31")]
-use mersenne31::M31x16;
-#[cfg(any(feature = "mersenne31", feature = "gf2", feature = "goldilocks"))]
-use poly_commit::OrionPCSForGKR;
 #[cfg(all(feature = "gf2", feature = "gf2_128"))]
 use gf2::GF2x128;
+#[cfg(feature = "babybear")]
+use gkr_engine::BabyBearx16Config;
 #[cfg(all(feature = "gf2", feature = "gf2_128"))]
 use gkr_engine::GF2ExtConfig;
 #[cfg(feature = "goldilocks")]
 use gkr_engine::{Goldilocksx1Config, Goldilocksx8Config};
+#[cfg(feature = "mersenne31")]
+use gkr_engine::{M31x16Config, M31x1Config};
+#[cfg(feature = "mersenne31")]
+use gkr_hashers::PoseidonFiatShamirHasher;
 #[cfg(feature = "goldilocks")]
 use goldilocks::Goldilocksx8;
-#[cfg(feature = "babybear")]
-use gkr_engine::BabyBearx16Config;
+#[cfg(feature = "mersenne31")]
+use mersenne31::M31x16;
+#[cfg(any(feature = "mersenne31", feature = "gf2", feature = "goldilocks"))]
+use poly_commit::OrionPCSForGKR;
 
 // ============== M31 ==============
 #[cfg(feature = "mersenne31")]
